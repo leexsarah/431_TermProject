@@ -1,144 +1,62 @@
-<!doctype html>
-<html>
-	<head>
-		<title>Student Page</title>
-		<link href="style.css" rel="stylesheet" type="type/css">
-	</head>
-	<body>
-		<center>
-		<?php
-			$cwid = $_POST["scwid"];
-			$link = mysqli_connect('localhost', 'root', 'root', 'school') or 
-			mysqli_connect('localhost', 'root', '', 'school');
-				
-			$select = "SELECT * ";
-			$from = "FROM student ";
-			$join = "INNER JOIN csuf_member ";
-			$where = "WHERE csuf_member.cwid =".$cwid." AND csuf_member.cwid = student.scwid;" ;
-			$query = $select.$from.$join.$where;
-			$result = $link->query($query);
-			while($row = mysqli_fetch_assoc($result)) {
-			    $a = $row['fname'];
-			    $b = $row['lname'];
-			    $c = $row['cwid'];
-			    $d = $row['ssn'];
-			    $e = $row['dob'];
-			    $f = $row['major'];
-			    $g = $row['city'];
-			    $h = $row['state'];
-			    $i = $row['zip_code'];
-			    $j = $row['phone_number'];
-		    }
-		    echo "<h1 class='header'>Welcome $a</h1>";
-			echo "<table valign='top' cellpadding='5'>";
-			echo "<caption>Your Profile:</caption>";
-			echo "<tr>";
-		    echo "<td>Name:</td><td>".$a." ".$b."</td>";
-			echo "</tr>";
-			echo "<tr>";
-		    echo "<td>CWID:</td><td>".$c."</td>";
-			echo "</tr>";
-			echo "<tr>";
-		    echo "<td>SSN:</td><td>".$d."</td>";
-			echo "</tr>";
-			echo "<tr>";
-		    echo "<td>Date of Birth:</td><td>".$e."</td>";
-			echo "</tr>";
-			echo "<tr>";
-		    echo "<td>Major:</td><td>".$f."</td>";
-			echo "</tr>";
-			echo "<tr>";
-		    echo "<td>City:</td><td>".$g."</td>";
-			echo "</tr>";
-			echo "<tr>";
-		    echo "<td>State:</td><td>".$h."</td>";
-			echo "</tr>";
-			echo "<tr>";
-		    echo "<td>Zip Code:</td><td>".$i."</td>";
-			echo "</tr>";
-			echo "<tr>";
-		    echo "<td>Phone Number:</td><td>".$j."</td>";
-			echo "</tr>";
-			echo "</tr>";
-		    echo "</table>";
-		    $select = "SELECT * ";
-			$from = "FROM student ";
-			$join = "INNER JOIN student_section, section ";
-			$where = "WHERE student_section.fk_scwid = ".$cwid." 
-			AND student_section.fk_scwid = student.scwid 
-			AND student_section.fk_section_number = section.section_number 
-			AND student_section.fk_course_id = section.fk_course_id;" ;
-			$query = $select.$from.$join.$where;
-			$result = $link->query($query);
-			while($row = mysqli_fetch_assoc($result)) {
-			    $a = $row['fk_course_id'];
-			    $b = $row['section_number'];
-			    $c = $row['instructor'];
-			    $d = $row['days'];
-			    $e = $row['start_time'];
-			    $f = $row['end_time'];
-			    $g = $row['room'];
-			    $h = $row['seats_available'];
-			    $i = $row['total_seats'];
-			    echo "<table valign='top' cellpadding='5'>";
-				echo "<caption>Class Schedule:</caption>";
-				echo "<tr>";
-			    echo "<td>Course:</td><td>".$a."-".$b."</td>";
-				echo "</tr>";
-				echo "<tr>";
-			    echo "<td>Instructor:</td><td>".$c."</td>";
-				echo "</tr>";
-				echo "<tr>";
-			    echo "<td>Days:</td><td>".$d."</td>";
-				echo "</tr>";
-				echo "<tr>";
-			    echo "<td>Start Time:</td><td>".$e."</td>";
-				echo "</tr>";
-				echo "<tr>";
-			    echo "<td>End Time:</td><td>".$f."</td>";
-				echo "</tr>";
-				echo "<tr>";
-			    echo "<td>Room:</td><td>".$g."</td>";
-				echo "</tr>";
-				echo "<tr>";
-			    echo "<td>Seats Available:</td><td>".$h."</td>";
-				echo "</tr>";
-				echo "<tr>";
-			    echo "<td>Total Seats:</td><td>".$i."</td>";
-				echo "</tr>";
-			    echo "</table>";
-			}
-			$select = "SELECT * ";
-			$from = "FROM student ";
-			$join = "INNER JOIN course_grades ";
-			$where = "WHERE student.scwid = ".$cwid." AND student.scwid = course_grades.fk_scwid;";
-			$query = $select.$from.$join.$where;
-			$result = $link->query($query);
-			while($row = mysqli_fetch_assoc($result)) {
-			    $a = $row['fk_course_id'];
-			    $b = $row['fk_section_number'];
-			    $c = $row['midterm_score'];
-			    $d = $row['final_score'];
-			    $e = $row['term_project_score'];
-			    echo "<table valign='top' cellpadding='5'>";
-				echo "<caption>Grades:</caption>";
-				echo "<tr>";
-			    echo "<td>Course:</td><td>".$a."-".$b."</td>";
-				echo "</tr>";
-				echo "<tr>";
-			    echo "<td>Midterm Exam Score:</td><td>".$c."%</td>";
-				echo "</tr>";
-				echo "<tr>";
-			    echo "<td>Final Exam Score:</td><td>".$d."%</td>";
-				echo "</tr>";
-				echo "<tr>";
-			    echo "<td>Term Project Score:</td><td>".$e."%</td>";
-				echo "</tr>";
-				echo "</tr>";
-			    echo "</table>";
-			}
-		    mysqli_close($link);
-		?>
-		</center>
-	</body>
+<?php
+	session_start();
+
+	$scwid = $_POST["scwid"];  //Store the student cwid from the form into a variable.
+
+	//Do some error checking to ensure that cwid is valid.
+	if(strlen($scwid) < 9){
+		$_SESSION["studentError"] = "Invalid Student CWID";
+
+		error_reporting(E_ALL | E_WARNING | E_NOTICE);
+		ini_set('display_errors', TRUE);
+		flush();
+		header("Location: www.example.com");
+		die('should have redirected by now');
+
+		exit();
+	} else{
+		//cwid is valid; now let's check if the user exists in the database.
+
+		$link = mysqli_connect('localhost', 'root', 'root', 'school') or 
+				mysqli_connect('localhost', 'root', '', 'school');
+
+		if(mysqli_connect_errno()){
+			echo "Connection failed: " . mysqli_connect_error();
+			exit();
+		}
+
+		$query = "SELECT C.fname, C.lname, S.scwid FROM csuf_member AS C, student AS S WHERE C.cwid = S.scwid AND S.scwid = " . $scwid . ";";
+
+		$result = $link->query($query) or die("ERROR: " . mysqli_error($link));
+
+		//If there are no rows returned, then student does not exist.
+		if($result->num_rows === 0){
+			$_SESSION["studentError"] = "Student does not exist";
+			header("Location: index.php");
+		}else{
+			$row = $result->fetch_assoc();
+
+			$fname = $row["fname"];
+			$lname = $row["lname"];
+			$scwid = $row["scwid"];
+		}
+
+		$result->free();
+		mysqli_close($link);
+	}
+
+	echo "IT WORKS";
+
+	$_SESSION["scwid"] = $scwid;
+
+	echo $fname . " " . $lname . " " . $scwid;
+?>
+	<!doctype html>
+	<html>
+		<head>
+			<title>Student Page</title>
+			<link href="style.css" rel="stylesheet" type="type/css">
+		</head>
+		<body>
+		</body>
 </html>

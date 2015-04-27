@@ -1,3 +1,7 @@
+<?php
+	session_start();
+?>
+
 <!doctype html>
 <html>
 	<head>
@@ -15,6 +19,14 @@
 					<input type="text" name="scwid">
 					<input type="submit" id="submit">
 				</form>
+
+				<?php
+					if(isset($_SESSION["studentError"])){
+						echo $_SESSION["studentError"];
+					}
+
+					unset($_SESSION["studentError"]);
+				?>
 				<br>
 				<form action="faculty.php" method="POST">Faculty:
 					<input type="text" name="fcwid">
