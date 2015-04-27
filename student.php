@@ -14,10 +14,10 @@
 			echo "Connected Successfully\n";
 
 			//Creating query that will be used to consult wit the database.
-			$select = "SELECT *";
-			$from = "FROM student";
-			$join = "INNER JOIN csuf_member";
-			$where = "WHERE csuf_member.cwid =".$cwid." AND csuf_member.cwid = student.scwid;";
+			$select = "SELECT * ";
+			$from = "FROM student ";
+			$join = "INNER JOIN csuf_member ";
+			$where = "WHERE csuf_member.cwid =".$cwid." AND csuf_member.cwid = student.scwid;" ;
 			$query = $select.$from.$join.$where;
 
 
