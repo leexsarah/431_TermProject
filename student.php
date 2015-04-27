@@ -11,7 +11,7 @@
 			$link = mysqli_connect('localhost', 'root', 'root', 'school');
 				
 			//Querying the server
-			echo "Connected Successfully\n";
+			//echo "Connected Successfully\n";
 
 			//Creating query that will be used to consult wit the database.
 			$select = "SELECT * ";
@@ -38,21 +38,19 @@
 			    $i = $row['zip_code'];
 			    $j = $row['phone_number'];
 		    }
-		    echo "<ul>";
-		    echo "<li>".$a."</li>";
-		    echo "<li>".$b."</li>";
-		    echo "<li>".$c."</li>";
-		    echo "<li>".$d."</li>";
-		    echo "<li>".$e."</li>";
-		    echo "<li>".$f."</li>";
-		    echo "<li>".$g."</li>";
-		    echo "<li>".$h."</li>";
-		    echo "<li>".$i."</li>";
-		    echo "<li>".$j."</li>";
+		    echo "<h1>Welcome $a</h1>";
+		    echo "<ul>Your iProfile: ";
+		    echo "<li>Name: ".$a." ".$b."</li>";
+		    echo "<li>CWID: ".$c."</li>";
+		    echo "<li>SSN: ".$d."</li>";
+		    echo "<li>Date of Birth:".$e."</li>";
+		    echo "<li>Major: ".$f."</li>";
+		    echo "<li>City: ".$g."</li>";
+		    echo "<li>State: ".$h."</li>";
+		    echo "<li>Zip Code: ".$i."</li>";
+		    echo "<li>Phone Number: ".$j."</li>";
 		    echo "</ul>";
 		    mysqli_close($link);
 		?>
-
-		<p> Hello World </p>
 	</body>
 </html>

@@ -7,6 +7,8 @@ from student
 inner join course_grades 
 where student.scwid = course_grades.fk_scwid and student.scwid=111111111;
 
+
+Prints out the list of classes student 111111111 has: 
 select * 
 from student 
 inner join student_section, section  
