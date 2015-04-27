@@ -2,30 +2,20 @@
 <html>
 	<head>
 		<title>Student Page</title>
+		<link href="style.css" rel="stylesheet" type="type/css">
 	</head>
 	<body>
+		<center>
 		<?php
-
 			$cwid = $_POST["scwid"];
-
-			$link = mysqli_connect('localhost', 'root', 'root', 'school');
+			$link = mysqli_connect('localhost', 'root', '', 'school');
 				
-			//Querying the server
-			//echo "Connected Successfully\n";
-
-			//Creating query that will be used to consult wit the database.
 			$select = "SELECT * ";
 			$from = "FROM student ";
 			$join = "INNER JOIN csuf_member ";
 			$where = "WHERE csuf_member.cwid =".$cwid." AND csuf_member.cwid = student.scwid;" ;
 			$query = $select.$from.$join.$where;
-
-
-			//Execute the query. 
-			//$query = "select * from student inner join csuf_member where csuf_member.cwid = 777777777 and csuf_member.cwid = student.scwid;";
-
 			$result = $link->query($query);
-
 			while($row = mysqli_fetch_assoc($result)) {
 			    $a = $row['fname'];
 			    $b = $row['lname'];
@@ -38,19 +28,38 @@
 			    $i = $row['zip_code'];
 			    $j = $row['phone_number'];
 		    }
-		    echo "<h1>Welcome $a</h1>";
-		    echo "<ul>Your Profile: ";
-		    echo "<li>Name: ".$a." ".$b."</li>";
-		    echo "<li>CWID: ".$c."</li>";
-		    echo "<li>SSN: ".$d."</li>";
-		    echo "<li>Date of Birth:".$e."</li>";
-		    echo "<li>Major: ".$f."</li>";
-		    echo "<li>City: ".$g."</li>";
-		    echo "<li>State: ".$h."</li>";
-		    echo "<li>Zip Code: ".$i."</li>";
-		    echo "<li>Phone Number: ".$j."</li>";
-		    echo "</ul>";
-
+		    echo "<h1 class='header'>Welcome $a</h1>";
+			echo "<table valign='top' cellpadding='5'>";
+			echo "<caption>Your Profile:</caption>";
+			echo "<tr>";
+		    echo "<td>Name:</td><td>".$a." ".$b."</td>";
+			echo "</tr>";
+			echo "<tr>";
+		    echo "<td>CWID:</td><td>".$c."</td>";
+			echo "</tr>";
+			echo "<tr>";
+		    echo "<td>SSN:</td><td>".$d."</td>";
+			echo "</tr>";
+			echo "<tr>";
+		    echo "<td>Date of Birth:</td><td>".$e."</td>";
+			echo "</tr>";
+			echo "<tr>";
+		    echo "<td>Major:</td><td>".$f."</td>";
+			echo "</tr>";
+			echo "<tr>";
+		    echo "<td>City:</td><td>".$g."</td>";
+			echo "</tr>";
+			echo "<tr>";
+		    echo "<td>State:</td><td>".$h."</td>";
+			echo "</tr>";
+			echo "<tr>";
+		    echo "<td>Zip Code:</td><td>".$i."</td>";
+			echo "</tr>";
+			echo "<tr>";
+		    echo "<td>Phone Number:</td><td>".$j."</td>";
+			echo "</tr>";
+			echo "</tr>";
+		    echo "</table>";
 		    $select = "SELECT * ";
 			$from = "FROM student ";
 			$join = "INNER JOIN student_section, section ";
@@ -59,10 +68,7 @@
 			AND student_section.fk_section_number = section.section_number 
 			AND student_section.fk_course_id = section.fk_course_id;" ;
 			$query = $select.$from.$join.$where;
-
 			$result = $link->query($query);
-
-			echo "<h2> Class schedule: </h2>";
 			while($row = mysqli_fetch_assoc($result)) {
 			    $a = $row['fk_course_id'];
 			    $b = $row['section_number'];
@@ -73,44 +79,65 @@
 			    $g = $row['room'];
 			    $h = $row['seats_available'];
 			    $i = $row['total_seats'];
-
-			    echo "<ul>";
-			    echo "<li>Course: ".$a."-".$b."</li>";
-			    echo "<li>Instructor: ".$c."</li>";
-			    echo "<li>Days: ".$d."</li>";
-			    echo "<li>Start Time:".$e."</li>";
-			    echo "<li>End Time: ".$f."</li>";
-			    echo "<li>Room: ".$g."</li>";
-			    echo "<li>Seats Available: ".$h."</li>";
-			    echo "<li>Total Seats: ".$i."</li>";
-			    echo "</ul>";
+			    echo "<table valign='top' cellpadding='5'>";
+				echo "<caption>Class Schedule:</caption>";
+				echo "<tr>";
+			    echo "<td>Course:</td><td>".$a."-".$b."</td>";
+				echo "</tr>";
+				echo "<tr>";
+			    echo "<td>Instructor:</td><td>".$c."</td>";
+				echo "</tr>";
+				echo "<tr>";
+			    echo "<td>Days:</td><td>".$d."</td>";
+				echo "</tr>";
+				echo "<tr>";
+			    echo "<td>Start Time:</td><td>".$e."</td>";
+				echo "</tr>";
+				echo "<tr>";
+			    echo "<td>End Time:</td><td>".$f."</td>";
+				echo "</tr>";
+				echo "<tr>";
+			    echo "<td>Room:</td><td>".$g."</td>";
+				echo "</tr>";
+				echo "<tr>";
+			    echo "<td>Seats Available:</td><td>".$h."</td>";
+				echo "</tr>";
+				echo "<tr>";
+			    echo "<td>Total Seats:</td><td>".$i."</td>";
+				echo "</tr>";
+			    echo "</table>";
 			}
-
 			$select = "SELECT * ";
 			$from = "FROM student ";
 			$join = "INNER JOIN course_grades ";
 			$where = "WHERE student.scwid = ".$cwid." AND student.scwid = course_grades.fk_scwid;";
 			$query = $select.$from.$join.$where;
-
 			$result = $link->query($query);
-
-			echo "<h2> Grades: </h2>";
 			while($row = mysqli_fetch_assoc($result)) {
 			    $a = $row['fk_course_id'];
 			    $b = $row['fk_section_number'];
 			    $c = $row['midterm_score'];
 			    $d = $row['final_score'];
 			    $e = $row['term_project_score'];
-
-			    echo "<ul>";
-			    echo "<li>Course: ".$a."-".$b."</li>";
-			    echo "<li>Midterm Exam Score: ".$c."%</li>";
-			    echo "<li>Final Exam Score: ".$d."%</li>";
-			    echo "<li>Term Project Score: ".$e."%</li>";
-			    echo "</ul>";
+			    echo "<table valign='top' cellpadding='5'>";
+				echo "<caption>Grades:</caption>";
+				echo "<tr>";
+			    echo "<td>Course:</td><td>".$a."-".$b."</td>";
+				echo "</tr>";
+				echo "<tr>";
+			    echo "<td>Midterm Exam Score:</td><td>".$c."%</td>";
+				echo "</tr>";
+				echo "<tr>";
+			    echo "<td>Final Exam Score:</td><td>".$d."%</td>";
+				echo "</tr>";
+				echo "<tr>";
+			    echo "<td>Term Project Score:</td><td>".$e."%</td>";
+				echo "</tr>";
+				echo "</tr>";
+			    echo "</table>";
 			}
-
 		    mysqli_close($link);
 		?>
+		</center>
 	</body>
 </html>

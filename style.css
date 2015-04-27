@@ -42,3 +42,35 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+.header {
+	font-family: "Arial";
+	color: #000066;
+}
+
+table {
+	display: inline-block;
+	margin-left: 50px;
+	margin-right: 50px;
+	border: 3px solid #000066;
+	font-family: "Arial";
+	border-collapse: collapse;
+}
+
+caption{
+	background-color: #000066;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	color: white;
+	font-family: "Arial";
+	font-size: 20px;
+	font-weight: bold;
+}
+
+tr:nth-child(even) {
+    background-color: #E88A0C;
+}
+
+td:first-child { 
+	font-weight: bold;
+}
