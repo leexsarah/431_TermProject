@@ -7,11 +7,7 @@
 	if(strlen($scwid) < 9){
 		$_SESSION["studentError"] = "Invalid Student CWID";
 
-		error_reporting(E_ALL | E_WARNING | E_NOTICE);
-		ini_set('display_errors', TRUE);
-		flush();
-		header("Location: www.example.com");
-		die('should have redirected by now');
+		header("Location: index.php");
 
 		exit();
 	} else{
