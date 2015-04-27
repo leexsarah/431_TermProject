@@ -83,7 +83,7 @@
 						echo "<td>";
 						echo "<form action='view_grades.php' method='POST'>";
 						echo "<input type='hidden' name='fk_course_id' value='".$fk_course_id."' />";
-						echo "<input type='submit' id='submit>";
+						echo "<input type='submit' id='submit'>";
 						echo "</form>";
 						echo "</td>";
 						echo "</tr>";
