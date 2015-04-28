@@ -13,8 +13,7 @@
 	} else{
 		//cwid is valid; now let's check if the user exists in the database.
 
-		$link = mysqli_connect('localhost', 'root', 'root', 'school') or 
-				mysqli_connect('localhost', 'root', '', 'school');
+		$link = mysqli_connect('localhost', 'root', '', 'school');
 
 		if(mysqli_connect_errno()){
 			echo "Connection failed: " . mysqli_connect_error();
@@ -66,8 +65,7 @@
 			 <table valign='top' cellpadding='5'>
 			 	<caption>Your Class List</caption>
 				<?php
-					$link = mysqli_connect('localhost', 'root', 'root', 'school') or 
-							mysqli_connect('localhost', 'root', '', 'school');
+					$link = mysqli_connect('localhost', 'root', '', 'school');
 
 				 	$query = "select fk_course_id, fk_section_number from student_section where fk_scwid = " . $scwid . ";";
 

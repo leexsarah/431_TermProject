@@ -1,10 +1,17 @@
+<!doctype html>
+<html>
+	<head>
+		<title>View Grades</title>
+		<link href="style.css" rel="stylesheet" type="type/css">
+	</head>
+	<body>
+	<center>
 <?php
 	session_start();
 	$course = $_POST["fk_course_id"];
 	$student = $_SESSION["scwid"];
 
-	$link = mysqli_connect('localhost', 'root', 'root', 'school') or 
-			mysqli_connect('localhost', 'root', '', 'school');
+	$link = mysqli_connect('localhost', 'root', '', 'school');
 				
 	$select = "SELECT * ";
 	$from = "FROM student ";
@@ -14,7 +21,6 @@
 	$result = $link->query($query);
 
 	$row = mysqli_fetch_array($result);
-	echo $row;
 
 	$fk_course_id = $row['fk_course_id'];
     $fk_section_number = $row['fk_section_number'];
@@ -41,3 +47,6 @@
 
     mysqli_close($link);
 ?>
+	</center>
+	</body>
+</html>

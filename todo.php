@@ -1,7 +1,6 @@
 <?php
 			$cwid = $_POST["scwid"];
-			$link = mysqli_connect('localhost', 'root', 'root', 'school') or 
-			mysqli_connect('localhost', 'root', '', 'school');
+			$link = mysqli_connect('localhost', 'root', '', 'school');
 				
 			$select = "SELECT * ";
 			$from = "FROM student ";
