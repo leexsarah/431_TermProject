@@ -27,5 +27,6 @@
 <body>
 	<h1>Administrator Mode</h1>
 	<h2>Welcome <?php echo $fname . " " . $lname ?></h2>
+	<?php include "admin_header.php"; ?>
 </body>
 </html>
