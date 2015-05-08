@@ -35,7 +35,7 @@
 				header("Location: Student_files/student.php");
 				break;
 			case 2:
-				header("Location: faculty.php");
+				header("Location: Faculty_files/faculty.php");
 				break;
 			case 3:
 				header("Location: admin.php");

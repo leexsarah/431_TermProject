@@ -17,6 +17,10 @@ a:visited {
 	color: #48D1CC; 
 }
 
+.error {
+	color: red;
+}
+
 .login {
 	width: 300px;
 }

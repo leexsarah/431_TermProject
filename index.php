@@ -46,15 +46,15 @@
 					?>
 				</ul>
 			</div>
-			
-			<?php
+
+			<p class="error"><?php
 				//Output login error.
 				if(isset($_SESSION["loginError"])){
 					echo $_SESSION["loginError"];
 				}
 
 				unset($_SESSION["loginError"]);
-			?>
+			?><p>
 			</div>
 			</center>
 		</main>
