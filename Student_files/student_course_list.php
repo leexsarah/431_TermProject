@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<title>Course List</title>
-		<link href="style.css" rel="stylesheet" type="type/css">
+		<link href="../style.css" rel="stylesheet" type="type/css">
 	</head>
 	<body>
 		<table valign='top' cellpadding='5'>
@@ -20,7 +20,7 @@
 		 		<th>Sections Available</th>
 		 	</tr>
 			<?php
-				include "create_database_link.php";
+				include "../create_database_link.php";
 				
 				//Query the database
 				$query = "select dept_name, course_id, course_name, units, semester from department a join course b, course_schedule c where term_id = 'Sp2015' and term_id = fk_term_id and dept_id = b.fk_dept_id and b.fk_dept_id = c.fk_dept_id;";
