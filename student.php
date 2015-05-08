@@ -3,46 +3,20 @@
 
 	include "create_database_link.php";
 
-	$scwid = $_POST["scwid"];  //Store the student cwid from the form into a variable.
+	$scwid = $_SESSION["cwid"];
+	$status = $_SESSION["status"];
+	
+	$query = "SELECT C.fname, C.lname FROM csuf_member AS C, student AS S WHERE C.cwid = S.scwid AND S.scwid = " . $scwid . ";";
 
-	//Do some error checking to ensure that cwid is valid.
-	if(strlen($scwid) < 9){
-		$_SESSION["studentError"] = "Invalid Student CWID";
+	$result = $link->query($query) or die("ERROR: " . mysqli_error($link));
 
-		header("Location: index.php");
+	$row = $result->fetch_assoc();
 
-		exit();
-	} else{
-		//cwid is valid; now let's check if the user exists in the database.
+	$fname = $row["fname"];
+	$lname = $row["lname"];
 
-		$link = mysqli_connect('localhost', 'root', '', 'school');
-
-		if(mysqli_connect_errno()){
-			echo "Connection failed: " . mysqli_connect_error();
-			exit();
-		}
-
-		$query = "SELECT C.fname, C.lname, S.scwid FROM csuf_member AS C, student AS S WHERE C.cwid = S.scwid AND S.scwid = " . $scwid . ";";
-
-		$result = $link->query($query) or die("ERROR: " . mysqli_error($link));
-
-		//If there are no rows returned, then student does not exist.
-		if($result->num_rows === 0){
-			$_SESSION["studentError"] = "Student does not exist";
-			header("Location: index.php");
-		}else{
-			$row = $result->fetch_assoc();
-
-			$fname = $row["fname"];
-			$lname = $row["lname"];
-			$scwid = $row["scwid"];
-		}
-
-		$result->free();
-		mysqli_close($link);
-	}
-
-	$_SESSION["scwid"] = $scwid;
+	$result->free();
+	mysqli_close($link);
 ?>
 <!doctype html>
 <html>
@@ -67,7 +41,7 @@
 		 <table valign='top' cellpadding='5'>
 		 	<caption>Your Class List</caption>
 			<?php
-				$link = mysqli_connect('localhost', 'root', '', 'school');
+				include "create_database_link.php";
 
 			 	$query = "select fk_course_id, fk_section_number from student_section where fk_scwid = " . $scwid . ";";
 
