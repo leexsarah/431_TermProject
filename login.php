@@ -32,7 +32,7 @@
 
 		switch($status){
 			case 1:
-				header("Location: student.php");
+				header("Location: Student_files/student.php");
 				break;
 			case 2:
 				header("Location: faculty.php");
