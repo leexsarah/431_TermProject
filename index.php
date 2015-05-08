@@ -10,6 +10,7 @@
 	</head>
 	<body>
 		<main>
+			<center>
 			<div class="login">
 				<p>Login</p>
 
@@ -55,6 +56,7 @@
 				unset($_SESSION["loginError"]);
 			?>
 			</div>
+			</center>
 		</main>
 	</body>
 </html>

@@ -18,9 +18,11 @@ a:visited {
 }
 
 .login {
-	float: center;
-	margin: auto;
 	width: 300px;
+}
+
+.account-list p {
+	font-weight: bold;
 }
 
 .login p {
@@ -103,4 +105,10 @@ td:first-child {
 td {
 	color: black;
 	padding: 5px;
+}
+
+th {
+	padding: 10px;
+	background-color: #000066;
+	color: white;
 }
