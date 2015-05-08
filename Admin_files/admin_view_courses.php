@@ -22,6 +22,7 @@
 		 		<th>Course Name</th>
 		 		<th>Units</th>
 		 		<th>Semester</th>
+		 		<th>Delete Course</th>
 		 	</tr>
 			<?php
 				include "../create_database_link.php";
@@ -45,6 +46,12 @@
 					echo "<td><a href='course_detail.php?course=" . $course_name . "'>" . $course_name . "</a></td>";
 					echo "<td>". $units ."</td>";
 					echo "<td>". $semester ."</td>";
+					echo "<td>";
+					echo "<form action='delete_course.php' method='POST'>";
+					echo "<input type='hidden' name='course' value='" . $course_name . "' />";
+					echo "<input type='submit' id='submit' value='DELETE COURSE' />";
+					echo "</form>";
+					echo "</td>";
 					echo "</tr>";
 				}
 		
