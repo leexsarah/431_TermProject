@@ -131,3 +131,21 @@
 			}
 		    mysqli_close($link);
 		?>
+
+		<?php
+					$link = mysqli_connect('localhost', 'root', 'root', 'school') or 
+							mysqli_connect('localhost', 'root', '', 'school');
+
+				 	$query = "select fk_course_id, fk_section_number from student_section where fk_scwid = " . $scwid . ";";
+
+					$result = $link->query($query) or die("ERROR:" . mysqli_error($link));
+
+					while($row = mysqli_fetch_array($result)){
+						echo "<tr>";
+						echo "<td>Course: " . $row["fk_course_id"] "-" . $row["fk_section_number"] . "</td>";
+						echo "</tr>";
+					}
+
+					$result->free();
+					mysqli_close($link);
+				?>
