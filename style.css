@@ -1,30 +1,33 @@
-.login{
-	background-color: #000066;
-	margin-left: 400px;
-	margin-right: 400px;
-	margin-bottom: 0px;
-	padding-top: 0.1em;
-	padding-bottom: 0.1em;
-	color: white;
+.login {
+	float: center;
+	margin: auto;
+	width: 300px;
+}
+
+.login p {
 	font-size: 30px;
 	font-family: "Arial";
 	font-weight: bold;
+	text-align: center;
+	background-color: #000066;
+	color: white;
+	padding: 0;
+	margin: 0;
 }
 
-.form{
+.login-form p {
+	font-size: 15px;
+	background-color: white;
+	color: black;
+	padding-top: 10px;
+}
+
+.login-form {
 	border: 3px solid #000066;
-	margin-top: 0px;
-	margin-left: 400px;
-	margin-right: 400px;
-	margin-bottom: 20px;
-	padding-top: 40px;
-	padding-bottom: 40px;
-	font-family: "Arial";
-	font-weight: bold;
 }
 
 /*Button made from http://css3buttongenerator.com/ */
-#submit {
+#submit, #submitButton {
   -webkit-border-radius: 20;
   -moz-border-radius: 20;
   border-radius: 20px;
@@ -37,7 +40,15 @@
   text-decoration: none;
 }
 
-#submit:hover {
+#submitButton {
+	display: block;
+	margin: auto;
+	text-align: center;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+#submit:hover, #submitButton:hover {
   background: #E88A0C;
   text-decoration: none;
   cursor: pointer;
