@@ -26,14 +26,26 @@
 		$_SESSION["cwid"] = $cwid;
 		$_SESSION["status"] = $status;
 
+		//Close SQL data before page changes happen.
+		$result->free();
+		mysqli_close($link);
+
+		switch($status){
+			case 1:
+				header("Location: student.php");
+				break;
+			case 2:
+				header("Location: faculty.php");
+				break;
+			case 3:
+				header("Location: admin.php");
+				break;
+		}
+
 		echo "Username: " . $username . "<br />";
 		echo "Password: " . $password . "<br />";
 		echo "CWID: " . $cwid . "<br />";
 		echo "Status: " . $status . "<br />";
 	}
-
-	$result->free();
-	mysqli_close($link);
-
 ?>
 
