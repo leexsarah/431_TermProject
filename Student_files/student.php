@@ -25,6 +25,7 @@
 		<link href="style.css" rel="stylesheet" type="type/css">
 	</head>
 	<body>
+		<?php include "header.php"; ?>
 		<h1>Welcome <?php echo $fname ?></h1>
 		<?php
 			echo "<table valign='top' cellpadding='5'>";
