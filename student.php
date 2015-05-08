@@ -67,6 +67,5 @@
 				mysqli_close($link);
 			?>
 		</table>
-		<a href="course_list.php">Add classes</a>
 	</body>
 </html>
