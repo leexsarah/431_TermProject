@@ -1,9 +1,13 @@
 <?php
 	session_start();
+
+	if(isset($_GET["course"])){
+		unset($_GET["course"]);
+	}
 ?>
 
 <!DOCTYPE html>
-<<html>
+<html>
 <head>
 	<title>Admin View: Course List</title>
 	<link href="../style.css" rel="stylesheet" type="text/css" />
@@ -38,7 +42,7 @@
 					echo "<tr>";
 					echo "<td>". $dept_name ."</td>";
 					echo "<td>". $course_id ."</td>";
-					echo "<td>". $course_name ."</td>";
+					echo "<td><a href='course_detail.php?course=" . $course_name . "'>" . $course_name . "</a></td>";
 					echo "<td>". $units ."</td>";
 					echo "<td>". $semester ."</td>";
 					echo "</tr>";
