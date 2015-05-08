@@ -48,6 +48,7 @@
 
 	    mysqli_close($link);
 	?>
+	<br><br>
 	<a href="student.php">Go back</a>
 	</center>
 	</body>

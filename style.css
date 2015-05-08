@@ -1,3 +1,22 @@
+body {
+	color: #000066;
+	font-family: "Arial";
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #48D1CC;
+	font-weight: bold;
+}
+
+a:visited {
+	color: #48D1CC; 
+}
+
 .login {
 	float: center;
 	margin: auto;
@@ -19,7 +38,7 @@
 	font-size: 15px;
 	background-color: white;
 	color: black;
-	padding-top: 10px;
+	padding-top: 20px;
 }
 
 .login-form {
@@ -44,19 +63,14 @@
 	display: block;
 	margin: auto;
 	text-align: center;
-	margin-bottom: 10px;
-	margin-top: 10px;
+	margin-bottom: 20px;
+	margin-top: 20px;
 }
 
 #submit:hover, #submitButton:hover {
   background: #E88A0C;
   text-decoration: none;
   cursor: pointer;
-}
-
-.header {
-	font-family: "Arial";
-	color: #000066;
 }
 
 table {
@@ -84,4 +98,9 @@ tr:nth-child(even) {
 
 td:first-child { 
 	font-weight: bold;
+}
+
+td {
+	color: black;
+	padding: 5px;
 }
