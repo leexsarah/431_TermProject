@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>View Grades</title>
-		<link href="style.css" rel="stylesheet" type="type/css">
+		<link href="../style.css" rel="stylesheet" type="type/css">
 	</head>
 	<body>
 	<center>
@@ -12,7 +12,7 @@
 		$course = $_POST["fk_course_id"];
 		$student = $_SESSION["cwid"];
 
-		include "create_database_link.php";
+		include "../create_database_link.php";
 					
 		$select = "SELECT * ";
 		$from = "FROM student ";
