@@ -43,5 +43,7 @@
 			<br>
 			<input type="submit" value="DELETE" id="submit" />
 		</form>
+
+		<a href="admin_view_courses.php">Click here to go back to the course list.</a>
 	</body>
 </html>
