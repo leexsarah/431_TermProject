@@ -60,5 +60,50 @@
 			?>
 		</table>
 	</div>
+	<div id="add-class-form">
+		<form action="admin_add_class.php" method="POST">
+			<label for="courseID">Course ID</label>
+			<input type="text" name="courseID" id="courseID" />
+
+			<label for="courseName">Course Name</label>
+			<input type="text" name="courseName" id="courseName" />
+
+			<label for="units">Units</label>
+			<select name="units" id="units">
+				<option value="1">1 unit</option>
+				<option value="2">2 units</option>
+				<option value="3">3 units</option>
+			</select>
+
+			<label for="term">Term</label>
+			<select name="term" id="term">
+				<option value="Fa2014">Fall 2014</option>
+				<option value="Sp2015">Spring 2015</option>
+			</select>
+
+			<label for="department">Department</label>
+			<select name="department" id="department">
+				<option value="1111">Computer Science</option>
+				<option value="1234">Physics</option>
+				<option value="2222">Math</option>
+				<option value="3333">Engineering</option>
+				<option value="4321">Chemistry</option>
+				<option value="4444">Business</option>
+				<option value="5555">Kinesiology</option>
+				<option value="7777">Art</option>
+				<option value="8888">Humanities</option>
+				<option value="9999">Music</option>
+			</select>
+
+			<input type="submit" id="submit" value="Create Course" />
+		</form>
+		<?php
+			if(isset($_SESSION["addError"])){
+				echo $_SESSION["addError"];
+			}
+
+			unset($_SESSION["addError"]);
+		?>
+	</div>
 </body>
 </html>
