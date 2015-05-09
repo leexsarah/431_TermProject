@@ -10,24 +10,21 @@
 		session_start();
 
 		$course = $_POST["fk_course_id"];
-		$student = $_SESSION["cwid"];
+		$student = $_SESSION["student_class_list"];
 
-		include "../create_database_link.php";
-					
-		$select = "SELECT * ";
-		$from = "FROM student ";
-		$join = "INNER JOIN course_grades ";
-		$where = "WHERE student.scwid = ".$student." AND student.scwid = course_grades.fk_scwid AND course_grades.fk_course_id = '".$course."';";
-		$query = $select.$from.$join.$where;
-		$result = $link->query($query);
+		print_r($student);
+		$output;
+		foreach($student as $value){
+			if ($value["fk_course_id"] === $course){
+				$output = $value;
+			}
+		}
 
-		$row = mysqli_fetch_array($result);
-
-		$fk_course_id = $row['fk_course_id'];
-	    $fk_section_number = $row['fk_section_number'];
-	    $midterm_score = $row['midterm_score'];
-	    $final_score = $row['final_score'];
-	    $term_project_score = $row['term_project_score'];
+		$fk_course_id = $output['fk_course_id'];
+	    $fk_section_number = $output['fk_section_number'];
+	    $midterm_score = $output['midterm_score'];
+	    $final_score = $output['final_score'];
+	    $term_project_score = $output['term_project_score'];
 
 		echo "<table valign='top' cellpadding='5'>";
 		echo "<caption>Grades:</caption>";

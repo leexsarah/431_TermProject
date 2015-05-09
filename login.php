@@ -33,8 +33,7 @@
 				$student = new Student($username);
 				$_SESSION["student_information"] = $student->getStudent_information();
 				$_SESSION["student_class_list"] = $student->getStudent_class_list();
-				print_r($_SESSION["student_class_list"]);
-				//header("Location: Student_files/student.php");
+				header("Location: Student_files/student.php");
 				break;
 			case 2:
 				$_SESSION["cwid"] = $cwid;

@@ -1,9 +1,7 @@
 <?php
 	session_start();
 
-	$student = $_SESSION["student_information"];	
-	print_r($student);
-
+	$student = $_SESSION["student_information"];
 	$fname = $student["fname"];
 ?>
 <!doctype html>
