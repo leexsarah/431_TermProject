@@ -44,7 +44,7 @@
 			case 3:
 				$_SESSION["cwid"] = $cwid;
 				$_SESSION["status"] = $status;
-				header("Location: admin.php");
+				header("Location: Admin_files/admin.php");
 				break;
 		}
 
