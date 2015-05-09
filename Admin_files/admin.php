@@ -22,7 +22,7 @@
 <html>
 <head>
 	<title>Administrator Page</title>
-	<link href="../style.css" rel="stylesheet" type="text/css" />
+	<link href="../style.css" rel="stylesheet" media="all">
 </head>
 <body>
 	<h1>Administrator Mode</h1>

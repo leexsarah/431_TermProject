@@ -22,6 +22,7 @@
 <html>
 	<head>
 		<title>Admin View: Confirm New Course</title>
+		<link href="../style.css" rel="stylesheet" media="all">
 	</head>
 	<body>
 		<?php

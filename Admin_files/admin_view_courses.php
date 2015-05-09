@@ -10,7 +10,7 @@
 <html>
 <head>
 	<title>Admin View: Course List</title>
-	<link href="../style.css" rel="stylesheet" type="text/css" />
+	<link href="../style.css" rel="stylesheet" media="all">
 </head>
 <body>
 		<div id="class-schedule">

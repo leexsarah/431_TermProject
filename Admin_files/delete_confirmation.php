@@ -12,7 +12,7 @@
 <html>
 	<head>
 		<title>Admin View: Delete Confirmation</title>
-		<link rel="stylesheet" type="text/css" href="../style.css" />
+		<link href="../style.css" rel="stylesheet" media="all">
 	</head>
 	<body>
 		<?php
@@ -25,9 +25,6 @@
 				echo "<p>No such class exists.</p>";
 				echo "<a href='admin_view_courses.php'>Click here to go back to the course list.</a>";
 			}
-
-			$result->free();
-			mysqli_close($link);
 		?>
 	</body>
 </html>

@@ -9,7 +9,7 @@
 <html>
 <head>
 	<title>Course Details</title>
-	<link rel="stylesheet" type="text/css" href="../style.css" />
+	<link href="../style.css" rel="stylesheet" media="all">
 </head>
 <body>
 	<h1>Details for <?php echo $courseID . "-" . $courseName; ?></h1>
