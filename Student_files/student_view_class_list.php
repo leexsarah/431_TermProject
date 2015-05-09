@@ -25,14 +25,17 @@
 					echo "<td>";
 					echo "<form action='view_grades.php' method='POST'>";
 					echo "<input type='hidden' name='fk_course_id' value='" . $courseID . "' />";
-					echo "<input type='submit' id='submit' />";
+					echo "<input type='submit' id='View Class Score' />";
 					echo "</form>";
 					echo "</td>";
 					echo "</tr>";
 				}
+<<<<<<< HEAD
 
 				//$result->free();
 				//mysqli_close($link);
+=======
+>>>>>>> Mario
 			?>
 	</body>
 </html>

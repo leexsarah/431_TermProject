@@ -24,7 +24,7 @@
 				
 				//Query the database
 				$query = "select dept_name, course_id, course_name, units, semester from department a join course b, course_schedule c where term_id = 'Sp2015' and term_id = fk_term_id and dept_id = b.fk_dept_id and b.fk_dept_id = c.fk_dept_id;";
-			
+				
 				$result = $link->query($query) or die("ERROR:" . mysqli_error($link));
 
 				while($row = mysqli_fetch_array($result)){
