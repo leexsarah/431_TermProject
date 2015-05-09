@@ -28,6 +28,7 @@
 					echo "<td>";
 					echo "<form action='view_grades.php' method='POST'>";
 					echo "<input type='hidden' name='fk_course_id' value='" . $courseID . "' />";
+<<<<<<< HEAD
 					echo "<input type='submit' id='submit' value='View Grade' />";
 					echo "</form>";
 					echo "</td>";
@@ -35,6 +36,9 @@
 					echo "<form action='drop_class.php' method='POST'>";
 					echo "<input type='hidden' name='fk_course_id' value='" . $courseID . "' />";
 					echo "<input type='submit' id='submit' value='Drop' />";
+=======
+					echo "<input type='submit' id='grade' value='View Class Score'/>";
+>>>>>>> 5c24afaffdb2f3f9bcaa4a3512b1206f75833f39
 					echo "</form>";
 					echo "</td>";
 					echo "</tr>";

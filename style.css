@@ -52,7 +52,7 @@ a:visited {
 }
 
 /*Button made from http://css3buttongenerator.com/ */
-#submit, #submitButton {
+#submit, #submitButton, #grade {
   -webkit-border-radius: 20;
   -moz-border-radius: 20;
   border-radius: 20px;
@@ -73,7 +73,7 @@ a:visited {
 	margin-top: 20px;
 }
 
-#submit:hover, #submitButton:hover {
+#submit:hover, #submitButton:hover, #grade:hover {
   background: #E88A0C;
   text-decoration: none;
   cursor: pointer;
