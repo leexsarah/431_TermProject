@@ -1,7 +1,8 @@
 <?php
 	session_start();
 
-	$courseName = $_GET["course"];
+	$courseID = $_POST["courseID"];
+	$courseName = $_POST["courseName"];
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +12,9 @@
 	<link rel="stylesheet" type="text/css" href="../style.css" />
 </head>
 <body>
-	<h1>Details for <?php echo $courseName; ?></h1>
+	<h1>Details for <?php echo $courseID . "-" . $courseName; ?></h1>
+
+
 </body>
 </html>
 

@@ -22,6 +22,7 @@
 		 		<th>Course Name</th>
 		 		<th>Units</th>
 		 		<th>Semester</th>
+		 		<th>View Details</th>
 		 		<th>Delete Course</th>
 		 	</tr>
 			<?php
@@ -43,15 +44,25 @@
 					echo "<tr>";
 					echo "<td>". $dept_name ."</td>";
 					echo "<td>". $course_id ."</td>";
-					echo "<td><a href='course_detail.php?course=" . $course_name . "'>" . $course_name . "</a></td>";
+					echo "<td>$course_name</td>";
 					echo "<td>". $units ."</td>";
 					echo "<td>". $semester ."</td>";
+
+					echo "<td>";
+					echo "<form action='course_detail.php' method='POST'>";
+					echo "<input type='hidden' name='courseID' value='$course_id' />";
+					echo "<input type='hidden' name='courseName' value='$course_name' />";
+					echo "<input type='submit' id='submit' value='View Details' />";
+					echo "</form>";
+					echo "</td>";
+
 					echo "<td>";
 					echo "<form action='delete_course.php' method='POST'>";
 					echo "<input type='hidden' name='course' value='" . $course_name . "' />";
 					echo "<input type='submit' id='submit' value='DELETE COURSE' />";
 					echo "</form>";
 					echo "</td>";
+
 					echo "</tr>";
 				}
 		
