@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>View Grades</title>
-		<link href="style.css" rel="stylesheet" media="all">
+		<link href="../style.css" rel="stylesheet" media="all">
 	</head>
 	<body>
 	<center>

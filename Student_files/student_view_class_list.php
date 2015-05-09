@@ -30,12 +30,6 @@
 					echo "</td>";
 					echo "</tr>";
 				}
-<<<<<<< HEAD
-
-				//$result->free();
-				//mysqli_close($link);
-=======
->>>>>>> Mario
 			?>
 	</body>
 </html>

@@ -36,13 +36,10 @@
 				header("Location: Student_files/student.php");
 				break;
 			case 2:
-<<<<<<< HEAD
+
 				$_SESSION["cwid"] = $cwid;
 				$_SESSION["status"] = $status;
-				header("Location: faculty.php");
-=======
 				header("Location: Faculty_files/faculty.php");
->>>>>>> bf7c42993a4fc3229991a89cfb6c50d05c32ed22
 				break;
 			case 3:
 				$_SESSION["cwid"] = $cwid;
