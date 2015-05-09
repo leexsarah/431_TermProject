@@ -41,9 +41,8 @@
 		echo "</tr>";
 		echo "</tr>";
 	    echo "</table>";
-
-	    mysqli_close($link);
 	?>
+	<br><br>
 	<a href="student.php">Go back</a>
 	</center>
 	</body>
