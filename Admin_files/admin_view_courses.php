@@ -13,6 +13,7 @@
 	<link href="../style.css" rel="stylesheet" media="all">
 </head>
 <body>
+		<?php include "../logout.php"; ?>
 		<div id="class-schedule">
 		<table valign='top' cellpadding='5'>
 		 	<caption>Course List (Spring 2015)</caption>

@@ -15,6 +15,7 @@
 		<link href="../style.css" rel="stylesheet" media="all">
 	</head>
 	<body>
+		<?php include "../logout.php"; ?>
 		<?php
 			if($result){
 				echo "<h1>Confirmed Deletion</h1>";

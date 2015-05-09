@@ -11,6 +11,7 @@
 		<link href="../style.css" rel="stylesheet" media="all">
 	</head>
 	<body>
+		<?php include "../logout.php"; ?>
 		<table valign='top' cellpadding='5'>
 		 	<caption>Course List</caption>
 		 	<tr>

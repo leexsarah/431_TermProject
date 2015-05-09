@@ -10,6 +10,7 @@
 		<link href="../style.css" rel="stylesheet" media="all">
 	</head>
 	<body>
+		<?php include "../logout.php"; ?>
 		<h1>Enrolled Courses</h1>
 
 		<table valign="top" cellpadding="5">

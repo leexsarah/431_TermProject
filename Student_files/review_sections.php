@@ -11,6 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="../style.css" />
 </head>
 <body>
+	<?php include "../logout.php"; ?>
 	<h1>Details for <?php echo (string)$course_id." - $course_name"; ?></h1>
 
 	<?php

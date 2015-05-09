@@ -5,6 +5,7 @@
 		<link href="../style.css" rel="stylesheet" media="all">
 	</head>
 	<body>
+		<?php include "../logout.php"; ?>
 		<?php
 			session_start();
 			$student = $_SESSION["student_information"];

@@ -13,6 +13,7 @@
 		<link rel="stylesheet" type="text/css" href="../style.css" />
 	</head>
 	<body>
+		<?php include "../logout.php"; ?>
 		<h1>Are you sure you want to add this class?</h1>
 		<form action='confirm_add.php' method='POST'>
 		<input type='hidden' name='section_number' value='$sectionNumber' />

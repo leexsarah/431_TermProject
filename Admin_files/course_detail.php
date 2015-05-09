@@ -12,6 +12,7 @@
 	<link href="../style.css" rel="stylesheet" media="all">
 </head>
 <body>
+	<?php include "../logout.php"; ?>
 	<h1>Details for <?php echo $courseID . "-" . $courseName; ?></h1>
 
 	<?php

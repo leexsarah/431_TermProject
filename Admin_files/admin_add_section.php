@@ -29,6 +29,7 @@
 	<title>Admin View: Confirm New Section Added</title>
 </head>
 <body>
+	<?php include "../logout.php"; ?>
 	<?php
 		if($result){
 			echo "<h1>Success</h1>";

@@ -31,6 +31,7 @@
 		<link rel="stylesheet" type="text/css" href="../style.css" />
 	</head>
 	<body>
+		<?php include "../logout.php"; ?>
 		<?php
 			if($result){
 				echo "<h1>Congratulations</h1>";

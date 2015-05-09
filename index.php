@@ -1,5 +1,10 @@
 <?php
 	session_start();
+
+	unset($_SESSION["cwid"]);
+	unset($_SESSION["status"]);
+	unset($_SESSION["student_information"]);
+	unset($_SESSION["student_class_list"]);
 ?>
 
 <!doctype html>

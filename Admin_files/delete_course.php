@@ -11,6 +11,7 @@
 		<link href="../style.css" rel="stylesheet" media="all">
 	</head>
 	<body class="delete">
+		<?php include "../logout.php"; ?>
 		<h1>WARNING!</h1>
 		<p>Do you really want to delete <?php echo $courseName; ?>?</p>
 		<p>You cannot undo this action.</p>

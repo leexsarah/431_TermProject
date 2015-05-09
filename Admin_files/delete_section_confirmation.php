@@ -17,6 +17,7 @@
 	<title>Admin View: Section Deleted</title>
 </head>
 <body>
+	<?php include "../logout.php"; ?>
 	<?php
 		if($result){
 			echo "<h1>Confirmed Deletion</h1>";

@@ -5,6 +5,7 @@
 		<link href="../style.css" rel="stylesheet" media="all">
 	</head>
 	<body>
+	<?php include "../logout.php"; ?>
 	<center>
 	<?php
 		session_start();
