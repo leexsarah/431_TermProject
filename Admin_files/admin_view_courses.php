@@ -109,13 +109,15 @@
 
 			<input type="submit" id="submit" value="Create Course" />
 		</form>
+		<div id="errorOutput">
 		<?php
 			if(isset($_SESSION["addError"])){
-				echo $_SESSION["addError"];
+				echo "<p>" . $_SESSION["addError"] . "</p>";
 			}
 
 			unset($_SESSION["addError"]);
 		?>
+		</div>
 	</div>
 </body>
 </html>

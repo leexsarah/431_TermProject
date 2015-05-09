@@ -108,6 +108,14 @@
 
 			<input type="submit" id="submit" value="Add Section" />
 		</form>
+
+		<?php
+			if(isset($_SESSION["addError"])){
+				echo $_SESSION["addError"];
+
+				unset($_SESSION["addError"]);
+			}
+		?>
 	</div>
 </body>
 </html>
