@@ -42,6 +42,7 @@
 		echo "</tr>";
 	    echo "</table>";
 	?>
+	<br><br>
 	<a href="student.php">Go back</a>
 	</center>
 	</body>
