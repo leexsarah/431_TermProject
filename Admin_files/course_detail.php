@@ -30,6 +30,7 @@
 		echo "<th>Room Number</th>";
 		echo "<th>Available Seats</th>";
 		echo "<th>Total Seats</th>";
+		echo "<th>Delete Section</th>";
 		echo "</tr>";
 
 		while($row = mysqli_fetch_array($result)){
@@ -51,7 +52,18 @@
 			echo "<td>$room</td>";
 			echo "<td>$availableSeats</td>";
 			echo "<td>$totalSeats</td>";
+
+			echo "<td>";
+			echo "<form action='delete_section.php' method='POST'>";
+			echo "<input type='hidden' name='sectionNumber' value='$sectionNumber' />";
+			echo "<input type='hidden' name='courseName' value='$courseName' />";
+			echo "<input type='submit' id='submit' value='DELETE SECTION' />";
+			echo "</form>";
+			echo "</td>";
+
+			echo "</tr>";
 		}
+		echo "</table>";
 	?>
 </body>
 </html>

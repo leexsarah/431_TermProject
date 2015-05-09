@@ -72,6 +72,7 @@
 		</table>
 	</div>
 	<div id="add-class-form">
+		<p>Add a Class</p>
 		<form action="admin_add_class.php" method="POST">
 			<label for="courseID">Course ID</label>
 			<input type="text" name="courseID" id="courseID" />
