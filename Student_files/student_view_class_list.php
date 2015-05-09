@@ -23,7 +23,6 @@
 				foreach($student_classes as $value) {
 					$courseID = $value["fk_course_id"];
 					$sectionNumber = $value["fk_section_number"];
-
 					echo "<tr>";
 					echo "<td>" . $courseID . "-" . $sectionNumber . "</td>";
 					echo "<td>";
