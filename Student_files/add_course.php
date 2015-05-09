@@ -17,7 +17,7 @@
 		<form action='confirm_add.php' method='POST'>
 		<input type='hidden' name='section_number' value='$sectionNumber' />
 		<input type='hidden' name='course_name' value='$course_name' />
-		<input type='submit' name='submit' value='YES' />"
+		<input type='submit' name='submit' value='YES' />
 
 		<a href="student_course_list.php">No, Go Back to List</a>
 	</body>
