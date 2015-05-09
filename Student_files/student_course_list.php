@@ -45,7 +45,7 @@
 					echo "<form action='review_sections.php' method='POST'>";
 					echo "<input type='hidden' name='course_id' value='" . $course_id . "' />";
 					echo "<input type='hidden' name='course_name' value='" . $course_name . "' />";
-					echo "<input type='submit' id='submit' value='Add Class' />";
+					echo "<input type='submit' id='submit' value='Information' />";
 					echo "</form>";
 					echo "</td>";
 				}

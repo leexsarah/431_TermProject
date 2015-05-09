@@ -1,6 +1,8 @@
 <?php
 	$course_id = $_POST["course_id"];
 	$course_name = $_POST["course_name"];
+	$student = $_SESSION["student_class_list"];
+	echo("hello world");
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="../style.css" />
 </head>
 <body>
-	<h1>Details for <?php echo $course_id . "-" . $course_name; ?></h1>
+	<h1>Details for <?php echo (string)$course_id." - $course_name"; ?></h1>
 
 	<?php
 		include "../create_database_link.php";
@@ -53,12 +55,23 @@
 
 			echo "<td>";
 			echo "<form action='add_course.php' method='POST'>";
-			echo "<input type='hidden' name='sectionNumber' value='$sectionNumber' />";
-			echo "<input type='hidden' name='courseName' value='$course_name' />";
-			if($availableSeats > 0){
+			echo "<input type='hidden' name='section_number' value='$sectionNumber' />";
+			echo "<input type='hidden' name='course_name' value='$course_name' />";
+
+			$enrolled = false;
+			foreach($student as $value){
+				if(in_array($course_id, $value)){
+					$enrolled = true;
+					break;
+				}
+			}
+			
+			if ($enrolled === true){
+				echo "<input type='submit' id='submit' value='Enrolled' disabled />";
+			}else if($availableSeats > 0) {
 				echo "<input type='submit' id='submit' value='Add' />";
 			} else{
-				echo "<input type='submit' id='submit' value='Add' disabled />";
+				echo "<input type='submit' id='submit' value='Full' disabled />";
 			}
 			echo "</form>";
 			echo "</td>";
