@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>View Grades</title>
-		<link href="../style.css" rel="stylesheet" type="type/css">
+		<link href="style.css" rel="stylesheet" media="all">
 	</head>
 	<body>
 	<center>
@@ -48,7 +48,6 @@
 
 	    mysqli_close($link);
 	?>
-	<br><br>
 	<a href="student.php">Go back</a>
 	</center>
 	</body>
