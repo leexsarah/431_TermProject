@@ -15,7 +15,7 @@
 <body>
 		<div id="class-schedule">
 		<table valign='top' cellpadding='5'>
-		 	<caption>Course List</caption>
+		 	<caption>Course List (Spring 2015)</caption>
 		 	<tr>
 		 		<th>Department Name</th>
 		 		<th>Course ID</th>
