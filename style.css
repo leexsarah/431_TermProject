@@ -3,6 +3,10 @@ body {
 	font-family: "Arial";
 }
 
+.delete {
+	color: black;
+}
+
 ul {
 	list-style: none;
 }
@@ -116,4 +120,9 @@ th {
 	padding: 10px;
 	background-color: #000066;
 	color: white;
+}
+
+#add-class-form {
+	color: black;
+	font-weight: bold;
 }
