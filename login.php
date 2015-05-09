@@ -42,9 +42,12 @@
 				header("Location: Faculty_files/faculty.php");
 				break;
 			case 3:
+<<<<<<< HEAD
+=======
 				$_SESSION["cwid"] = $cwid;
 				$_SESSION["status"] = $status;
-				header("Location: admin.php");
+>>>>>>> 520a403541b9e2b0c540546426a215d97bc56d07
+				header("Location: Admin_files/admin.php");
 				break;
 		}
 
