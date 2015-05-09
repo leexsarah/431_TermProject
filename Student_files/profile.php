@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Profile Information</title>
+		<link href="../style.css" rel="stylesheet" media="all">
 	</head>
 	<body>
 		<?php

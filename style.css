@@ -1,7 +1,32 @@
+body {
+	color: #000066;
+	font-family: "Arial";
+}
+
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: #48D1CC;
+	font-weight: bold;
+}
+
+a:visited {
+	color: #48D1CC; 
+}
+
+.error {
+	color: red;
+}
+
 .login {
-	float: center;
-	margin: auto;
 	width: 300px;
+}
+
+.account-list p {
+	font-weight: bold;
 }
 
 .login p {
@@ -19,7 +44,7 @@
 	font-size: 15px;
 	background-color: white;
 	color: black;
-	padding-top: 10px;
+	padding-top: 20px;
 }
 
 .login-form {
@@ -44,19 +69,14 @@
 	display: block;
 	margin: auto;
 	text-align: center;
-	margin-bottom: 10px;
-	margin-top: 10px;
+	margin-bottom: 20px;
+	margin-top: 20px;
 }
 
 #submit:hover, #submitButton:hover {
   background: #E88A0C;
   text-decoration: none;
   cursor: pointer;
-}
-
-.header {
-	font-family: "Arial";
-	color: #000066;
 }
 
 table {
@@ -76,6 +96,7 @@ caption{
 	font-family: "Arial";
 	font-size: 20px;
 	font-weight: bold;
+	border-bottom: 3px solid white;
 }
 
 tr:nth-child(even) {
@@ -84,4 +105,15 @@ tr:nth-child(even) {
 
 td:first-child { 
 	font-weight: bold;
+}
+
+td {
+	color: black;
+	padding: 5px;
+}
+
+th {
+	padding: 10px;
+	background-color: #000066;
+	color: white;
 }

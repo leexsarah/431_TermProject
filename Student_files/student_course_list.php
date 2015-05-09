@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<title>Course List</title>
-		<link href="../style.css" rel="stylesheet" type="type/css">
+		<link href="../style.css" rel="stylesheet" media="all">
 	</head>
 	<body>
 		<table valign='top' cellpadding='5'>

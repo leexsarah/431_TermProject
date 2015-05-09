@@ -10,7 +10,7 @@
 <html>
 	<head>
 		<title>Student Page</title>
-		<link href="../style.css" rel="stylesheet" type="type/css">
+		<link href="../style.css" rel="stylesheet" media="all">
 	</head>
 	<body>
 		<h1>Welcome <?php echo $fname ?></h1>

@@ -7,7 +7,7 @@
 <html>
 	<head>
 		<title>Your Courses</title>
-		<link href="../style.css" rel="stylesheet" type="text/css" />
+		<link href="../style.css" rel="stylesheet" media="all">
 	</head>
 	<body>
 		<h1>Enrolled Courses</h1>
@@ -31,8 +31,8 @@
 					echo "</tr>";
 				}
 
-				$result->free();
-				mysqli_close($link);
+				//$result->free();
+				//mysqli_close($link);
 			?>
 	</body>
 </html>
