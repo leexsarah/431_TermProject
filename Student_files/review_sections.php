@@ -1,7 +1,6 @@
 <?php
 	$course_id = $_POST["course_id"];
 	$course_name = $_POST["course_name"];
-
 ?>
 
 <!DOCTYPE html>
@@ -57,9 +56,9 @@
 			echo "<input type='hidden' name='sectionNumber' value='$sectionNumber' />";
 			echo "<input type='hidden' name='courseName' value='$course_name' />";
 			if($availableSeats > 0){
-				echo "<input type='submit' id='submit' value='ADD' />";
+				echo "<input type='submit' id='submit' value='Add' />";
 			} else{
-				echo "<input type='submit' id='submit' value='ADD' disabled />";
+				echo "<input type='submit' id='submit' value='Add' disabled />";
 			}
 			echo "</form>";
 			echo "</td>";
