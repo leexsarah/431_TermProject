@@ -12,7 +12,6 @@
 		$course = $_POST["fk_course_id"];
 		$student = $_SESSION["student_class_list"];
 
-		print_r($student);
 		$output;
 		foreach($student as $value){
 			if ($value["fk_course_id"] === $course){
