@@ -27,7 +27,7 @@
 					echo "<td>" . $courseID . "-" . $sectionNumber . "</td>";
 					echo "<td>";
 					echo "<form action='view_grades.php' method='POST'>";
-					echo "<input type='hidden' name='fk_course_id' value='" . $courseID . "' />"
+					echo "<input type='hidden' name='fk_course_id' value='" . $courseID . "' />";
 					echo "<input type='submit' id='submit' value='View Grade' />";
 					echo "</form>";
 					echo "</td>";
