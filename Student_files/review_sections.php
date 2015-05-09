@@ -1,10 +1,9 @@
 <?php
+	session_start();
 	$course_id = $_POST["course_id"];
 	$course_name = $_POST["course_name"];
-	$student = $_SESSION["student_class_list"];
-	echo("hello world");
+	$student =$_SESSION["student_class_list"];
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>

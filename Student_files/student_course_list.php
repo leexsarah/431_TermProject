@@ -1,5 +1,7 @@
 <?php
 	session_start();
+	$profile = $_SESSION["student_information"];
+	$student = $_SESSION["student_class_list"];
 ?>
 
 <!doctype html>
