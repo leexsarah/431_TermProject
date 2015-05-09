@@ -2,31 +2,21 @@
 <html>
 	<head>
 		<title>Profile Information</title>
+		<link href="../style.css" rel="stylesheet" media="all">
 	</head>
 	<body>
 		<?php
 			session_start();
+			$student = $_SESSION["student_information"];
 
-			$scwid = $_SESSION["cwid"];
-
-			include "../create_database_link.php";
-
-			$query = "SELECT fname, lname, dob, city, state, zip_code, phone_number, dept_name FROM csuf_member, student, department WHERE scwid = cwid AND cwid = " . $scwid . " AND dept_id = major;";
-			$result = $link->query($query) or die("ERROR: query failed.");
-
-			$row = $result->fetch_assoc();
-
-			$fname = $row["fname"];
-			$lname = $row["lname"];
-			$dob = $row["dob"];
-			$city = $row["city"];
-			$state = $row["state"];
-			$zip = $row["zip_code"];
-			$phoneNumber = $row["phone_number"];
-			$major = $row["dept_name"];
-
-			$result->free();
-			mysqli_close($link);
+			$fname = $student["fname"];
+			$lname = $student["lname"];
+			$dob = $student["dob"];
+			$city = $student["city"];
+			$state = $student["state"];
+			$zip = $student["zip_code"];
+			$phoneNumber = $student["phone_number"];
+			$major = $student["dept_name"];
 
 			echo "<table>";
 			echo "<caption>Your Profile Information</caption>";

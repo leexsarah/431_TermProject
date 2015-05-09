@@ -6,10 +6,11 @@
 <html>
 	<head>
 		<title>Login Page</title>
-		<link href="style.css" rel="stylesheet" type="type/css">
+		<link href="style.css" rel="stylesheet" media="all">
 	</head>
 	<body>
 		<main>
+			<center>
 			<div class="login">
 				<p>Login</p>
 
@@ -45,16 +46,17 @@
 					?>
 				</ul>
 			</div>
-			
-			<?php
+
+			<p class="error"><?php
 				//Output login error.
 				if(isset($_SESSION["loginError"])){
 					echo $_SESSION["loginError"];
 				}
 
 				unset($_SESSION["loginError"]);
-			?>
+			?><p>
 			</div>
+			</center>
 		</main>
 	</body>
 </html>

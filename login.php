@@ -23,21 +23,30 @@
 		$cwid = $row["fk_cwid"];
 		$status = $row["status"];
 
-		$_SESSION["cwid"] = $cwid;
-		$_SESSION["status"] = $status;
-
 		//Close SQL data before page changes happen.
 		$result->free();
 		mysqli_close($link);
 
 		switch($status){
 			case 1:
+				include "./Student_files/student_object.php";
+				$student = new Student($username);
+				$_SESSION["student_information"] = $student->getStudent_information();
+				$_SESSION["student_class_list"] = $student->getStudent_class_list();
 				header("Location: Student_files/student.php");
 				break;
 			case 2:
-				header("Location: faculty.php");
+
+				$_SESSION["cwid"] = $cwid;
+				$_SESSION["status"] = $status;
+				header("Location: Faculty_files/faculty.php");
 				break;
 			case 3:
+<<<<<<< HEAD
+=======
+				$_SESSION["cwid"] = $cwid;
+				$_SESSION["status"] = $status;
+>>>>>>> 520a403541b9e2b0c540546426a215d97bc56d07
 				header("Location: Admin_files/admin.php");
 				break;
 		}

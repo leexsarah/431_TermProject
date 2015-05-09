@@ -6,7 +6,7 @@
 <html>
 	<head>
 		<title>Course List</title>
-		<link href="../style.css" rel="stylesheet" type="type/css">
+		<link href="../style.css" rel="stylesheet" media="all">
 	</head>
 	<body>
 		<table valign='top' cellpadding='5'>
@@ -24,7 +24,7 @@
 				
 				//Query the database
 				$query = "select dept_name, course_id, course_name, units, semester from department a join course b, course_schedule c where term_id = 'Sp2015' and term_id = fk_term_id and dept_id = b.fk_dept_id and b.fk_dept_id = c.fk_dept_id;";
-			
+				
 				$result = $link->query($query) or die("ERROR:" . mysqli_error($link));
 
 				while($row = mysqli_fetch_array($result)){
@@ -41,8 +41,12 @@
 					echo "<td>". $course_name ."</td>";
 					echo "<td>". $units ."</td>";
 					echo "<td>". $semester ."</td>";
-					echo "<td><a href='#'>Sections</a></td>";
-					echo "</tr>";
+					echo "<td>";
+					echo "<form action='view_class_sections.php' method='POST'>";
+					echo "<input type='hidden' name='course_id' value='" . $course_id . "' />";
+					echo "<input type='submit' id='submit' value='Add Class' />";
+					echo "</form>";
+					echo "</td>";
 				}
 		
 				$result->free();
