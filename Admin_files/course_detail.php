@@ -57,6 +57,7 @@
 			echo "<form action='delete_section.php' method='POST'>";
 			echo "<input type='hidden' name='sectionNumber' value='$sectionNumber' />";
 			echo "<input type='hidden' name='courseName' value='$courseName' />";
+			echo "<input type='hidden' name='courseID' value='$courseID' />";
 			echo "<input type='submit' id='submit' value='DELETE SECTION' />";
 			echo "</form>";
 			echo "</td>";
@@ -65,6 +66,59 @@
 		}
 		echo "</table>";
 	?>
+
+	<div id="add-section-form">
+		<p>Add a New Section</p>
+		<form action="admin_add_section.php" method="POST">
+			<label for="inputSectionNumber">Section Number</label>
+			<input type="text" name="inputSectionNumber" id="inputSectionNumber" />
+
+			<?php echo "<input type='hidden' name='inputCourseID' id='inputCourseID' value='$courseID' />"; ?>
+
+			<label for="selectInstructor">Instructor</label>
+			<select name="selectInstructor" id="selectInstructor">
+				<option value="888888888">Professor Knowitall</option>
+				<option value="999999999">Doctor Janice</option>
+			</select>
+
+			<label for="selectDays">Days</label>
+			<select name="selectDays" id="selectDays">
+				<option value="MW">Monday/Wednesday</option>
+				<option value="TuTh">Tuesday/Thursday</option>
+				<option value="MTuW">Monday/Tuesday/Wednesday</option>
+				<option value="WF">Wednesday/Friday</option>
+				<option value="MF">Monday/Friday</option>
+				<option value="FS">Friday/Saturday</option>		
+			</select>
+
+			<label for="inputStartTime">Start Time</label>
+			<input type="text" name="inputStartTime" id="inputStartTime" value="12:00:00"/>
+
+			<label for="inputEndTime">End Time</label>
+			<input type="text" name="inputEndTime" id="inputEndTime" value="13:45:00" />
+
+			<label for="inputRoom">Room</label>
+			<input type="text" name="inputRoom" id="inputRoom" />
+
+			<label for="inputAvailableSeats">Available Seats</label>
+			<input type="text" name="inputAvailableSeats" id="inputAvailableSeats" value="0"/>
+
+			<label for="inputTotalSeats">Total Seats</label>
+			<input type="text" name="inputTotalSeats" id="inputTotalSeats" />
+
+			<input type="submit" id="submit" value="Add Section" />
+		</form>
+
+		<?php
+			if(isset($_SESSION["addError"])){
+				echo $_SESSION["addError"];
+
+				unset($_SESSION["addError"]);
+			}
+		?>
+	</div>
+
+	<a href="admin_view_courses.php">Click here to go back to the course list.</a>
 </body>
 </html>
 

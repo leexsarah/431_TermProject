@@ -14,7 +14,7 @@
 		$result = $link->query($query) or die("ERROR: " . mysqli_error($link));
 
 	} else{
-		$_SESSION["addError"] = "One or more fields are blank.";
+		$_SESSION["addError"] = "ERROR: Cannot add course. One or more fields are blank.";
 		header("Location: admin_view_courses.php");
 	}
 ?>

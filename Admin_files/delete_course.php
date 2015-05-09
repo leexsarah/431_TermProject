@@ -32,16 +32,34 @@
 			$result->free();
 			mysqli_close($link);
 
-			echo $courseID . " " . $courseName . " " . $units . " " . $term . " " . $dept;
-		?>
+			echo "<table valign='top' cellpadding='5'>";
+			echo "<tr>";
+			echo "<th>Course ID</th>";
+			echo "<th>Course Name</th>";
+			echo "<th>Units</th>";
+			echo "<th>Term</th>";
+			echo "<th>Department</th>";
+			echo "<th>Confirm Deletion</th>";
+			echo "</tr>";
 
-		<form action="delete_confirmation.php" method="POST">
-			<?php
-				echo "<input type='hidden' name='courseID' value='" . $courseID . "' />";
-				echo "<input type='hidden' name='courseName' value='" . $courseName . "' />";
-			?>
-			<br>
-			<input type="submit" value="DELETE" id="submit" />
-		</form>
+			echo "<tr>";
+			echo "<td>$courseID</td>";
+			echo "<td>$courseName</td>";
+			echo "<td>$units</td>";
+			echo "<td>$term</td>";
+			echo "<td>$dept</td>";
+
+			echo "<td>";
+			echo "<form action='delete_confirmation.php' method='POST'>";
+			echo "<input type='hidden' name='courseID' value='" . $courseID . "' />";
+			echo "<input type='hidden' name='courseName' value='" . $courseName . "' />";
+			echo "<input type='submit' value='CONFIRM DELETION' id='submit' />";
+			echo "</form>";
+			echo "</td>";
+
+			echo "</tr>";
+			echo "</table>";
+		?>
+		<a href="admin_view_courses.php">Click here to go back to the course list.</a>
 	</body>
 </html>
