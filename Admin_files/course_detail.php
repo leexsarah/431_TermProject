@@ -57,6 +57,7 @@
 			echo "<form action='delete_section.php' method='POST'>";
 			echo "<input type='hidden' name='sectionNumber' value='$sectionNumber' />";
 			echo "<input type='hidden' name='courseName' value='$courseName' />";
+			echo "<input type='hidden' name='courseID' value='$courseID' />";
 			echo "<input type='submit' id='submit' value='DELETE SECTION' />";
 			echo "</form>";
 			echo "</td>";
