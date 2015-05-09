@@ -14,6 +14,9 @@
 
 		<table valign="top" cellpadding="5">
 			<caption>Your Class List</caption>
+			<th>Class-Section</th>
+			<th>Grades</th>
+			<th>Drop Class</th>
 			<?php
 
 				foreach($student_classes as $value) {
@@ -25,11 +28,18 @@
 					echo "<td>";
 					echo "<form action='view_grades.php' method='POST'>";
 					echo "<input type='hidden' name='fk_course_id' value='" . $courseID . "' />";
-					echo "<input type='submit' id='View Class Score' />";
+					echo "<input type='submit' id='submit' value='View Grade' />";
+					echo "</form>";
+					echo "</td>";
+					echo "<td>";
+					echo "<form action='drop_class.php' method='POST'>";
+					echo "<input type='hidden' name='fk_course_id' value='" . $courseID . "' />";
+					echo "<input type='submit' id='submit' value='Drop' />";
 					echo "</form>";
 					echo "</td>";
 					echo "</tr>";
 				}
 			?>
+		</table>
 	</body>
 </html>

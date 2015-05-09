@@ -41,8 +41,12 @@
 					echo "<td>". $course_name ."</td>";
 					echo "<td>". $units ."</td>";
 					echo "<td>". $semester ."</td>";
-					echo "<td><a href='#'>Sections</a></td>";
-					echo "</tr>";
+					echo "<td>";
+					echo "<form action='view_class_sections.php' method='POST'>";
+					echo "<input type='hidden' name='course_id' value='" . $course_id . "' />";
+					echo "<input type='submit' id='submit' value='Add Class' />";
+					echo "</form>";
+					echo "</td>";
 				}
 		
 				$result->free();
