@@ -56,7 +56,7 @@
 			echo "<td>";
 			echo "<form action='add_course.php' method='POST'>";
 			echo "<input type='hidden' name='section_number' value='$sectionNumber' />";
-			echo "<input type='hidden' name='course_name' value='$course_name' />";
+			echo "<input type='hidden' name='course_id' value='$course_id' />";
 
 			$enrolled = false;
 			foreach($student as $value){
