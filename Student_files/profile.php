@@ -38,5 +38,6 @@
 			echo "<td>" . $major . "</td>";
 			echo "</table>";
 		?>
+		<a href="student.php">Click here to go back to main page.</a>
 	</body>
 </html>
