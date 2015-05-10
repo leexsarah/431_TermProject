@@ -28,7 +28,7 @@
 
 			//Setup class_list
 			$cwid = (int)$this->student_information["cwid"];
-			$class_list_query = "select a.fk_course_id, a.fk_section_number, a.fk_section_number, midterm_score, final_score, term_project_score from student_section a inner join course_grades b where a.fk_scwid = ".$cwid." and a.fk_scwid = b.fk_scwid and a.fk_course_id = b. fk_course_id;";
+			$class_list_query = "select a.fk_course_id, a.fk_section_number, a.fk_section_number, midterm_score, final_score, term_project_score from student_section a inner join course_grades b where a.fk_scwid = ".$cwid." and a.fk_scwid = b.fk_scwid and a.fk_course_id = b.fk_course_id;";
 			$result = $link->query($class_list_query) or die("ERROR: Failed query. ". mysqli_error($link));
 
 			while($row = mysqli_fetch_assoc($result)){
