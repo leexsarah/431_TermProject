@@ -44,6 +44,7 @@
 					echo "<td>";
 					echo "<form action='drop_class.php' method='POST'>";
 					echo "<input type='hidden' name='fk_course_id' value='" . $courseID . "' />";
+					echo "<input type='hidden' name='fk_section_number' value='$sectionNumber' />";
 					echo "<input type='submit' id='submit' value='Drop' />";
 					echo "</form>";
 					echo "</td>";
