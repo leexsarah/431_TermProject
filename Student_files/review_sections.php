@@ -3,6 +3,8 @@
 	$course_id = $_POST["course_id"];
 	$course_name = $_POST["course_name"];
 	$student =$_SESSION["student_class_list"];
+	$studentInformation = $_SESSION["student_information"];
+	$scwid = $studentInformation["cwid"];
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,6 +18,15 @@
 
 	<?php
 		include "../create_database_link.php";
+
+		$query = "SELECT fk_course_id FROM student_section WHERE fk_scwid = $scwid AND fk_course_id = '$course_id';";
+		$res = $link->query($query) or die("ERROR: " . mysqli_error($link));
+
+		$enrolled = false;
+
+		if($res->num_rows > 0){
+			$enrolled = true;
+		}
 
 		$query = "SELECT section_number, days, start_time, end_time, room, seats_available, total_seats, fname, lname FROM section, csuf_member WHERE fk_course_id='$course_id' AND cwid = instructor;";
 		$result = $link->query($query) or die("ERROR: " . mysqli_error($link));
@@ -58,6 +69,7 @@
 			echo "<input type='hidden' name='section_number' value='$sectionNumber' />";
 			echo "<input type='hidden' name='course_id' value='$course_id' />";
 
+			/*
 			$enrolled = false;
 			foreach($student as $value){
 				if(in_array($course_id, $value)){
@@ -65,7 +77,8 @@
 					break;
 				}
 			}
-			
+			*/
+
 			if ($enrolled === true){
 				echo "<input type='submit' id='submit' value='Enrolled' disabled />";
 			}else if($availableSeats > 0) {
