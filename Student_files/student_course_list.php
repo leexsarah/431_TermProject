@@ -12,6 +12,7 @@
 	</head>
 	<body>
 		<?php include "../logout.php"; ?>
+		<br>
 		<table valign='top' cellpadding='5'>
 		 	<caption>Course List</caption>
 		 	<tr>
@@ -57,6 +58,7 @@
 				mysqli_close($link);
 			?>
 		</table>
+		<br><br>
 		<a href="student.php">Click here to go back to main page.</a>
 	</body>
 </html>	

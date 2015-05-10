@@ -30,7 +30,7 @@
 <html>
 	<head>
 		<title>Confirm Drop</title>
-		<link rel="stylesheet" type="text/css" href="../style.css" />
+		<link href="../style.css" rel="stylesheet" media="all">
 	</head>
 	<body>
 		<?php include "../logout.php"; ?>
@@ -38,7 +38,7 @@
 			if($result){
 				echo "<h1>Drop Confirmed</h1>";
 				echo "<p>You have dropped the course.</p>";
-				echo "<a href='student_view_class_list.php'>Click here to go back to your class list.</a>";
+				echo "<a href='student_view_class_list.php'>Click here to go back to your class list.</a><br><br>";
 				echo "<a href='student.php'>Click here to go back to the main page.</a>";
 			} else{
 				echo "<h1>Error</h1>";

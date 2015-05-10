@@ -22,7 +22,7 @@
 		$_SESSION["student_information"] = $student->getStudent_information();
 		$_SESSION["student_class_list"] = $student->getStudent_class_list();
 	}
-	mysqli_close($link);
+	//mysqli_close($link);
 ?>
 
 
@@ -30,7 +30,7 @@
 <html>
 	<head>
 		<title>Confirm Add</title>
-		<link rel="stylesheet" type="text/css" href="../style.css" />
+		<link href="../style.css" rel="stylesheet" media="all">
 	</head>
 	<body>
 		<?php include "../logout.php"; ?>
@@ -39,7 +39,7 @@
 				echo "<h1>Congratulations</h1>";
 				echo "<p>You have been added to the course.</p>";
 				echo "<a href='student_course_list.php'>Click here to go back to the course list.</a>";
-				echo "<p> or here:";
+				echo "<p> or here: ";
 				echo "<a href='student.php'>To go back to the main page</a>";
 			} else{
 				echo "<h1>Error</h1>";

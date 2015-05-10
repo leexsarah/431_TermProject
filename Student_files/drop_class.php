@@ -21,9 +21,9 @@
 				echo "<input type='hidden' name='sectionNumber' value='$sectionNumber' />";
 				echo "<input type='hidden' name='courseID' value='$courseID' />";
 			?>
-			<input type="submit" name="submit" value="Confirm Drop" />
+			<input type="submit" name="submit" value="Confirm Drop" id="submit" />
 		</form>
-
+		<br>
 		<a href="student_view_class_list.php">No, Go Back to List</a>
 	</body>
 </html>

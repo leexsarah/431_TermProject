@@ -10,7 +10,7 @@
 <html>
 <head>
 	<title>Course Details</title>
-	<link rel="stylesheet" type="text/css" href="../style.css" />
+	<link href="../style.css" rel="stylesheet" media="all">
 </head>
 <body>
 	<?php include "../logout.php"; ?>
@@ -93,6 +93,7 @@
 		}
 		echo "</table>";
 	?>
+	<br><br>
 	<a href="student.php">Click here to go back to main page.</a>
 </body>
 </html>

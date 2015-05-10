@@ -10,7 +10,7 @@
 <html>
 	<head>
 		<title><?php echo "Confirm: $course_name-$section_number"?></title>
-		<link rel="stylesheet" type="text/css" href="../style.css" />
+		<link href="../style.css" rel="stylesheet" media="all">
 	</head>
 	<body>
 		<?php include "../logout.php"; ?>
@@ -20,8 +20,8 @@
 			echo "<input type='hidden' name='sectionNumber' value='$sectionNumber' />";
 			echo "<input type='hidden' name='courseID' value='$courseID' />";
 		?>
-		<input type='submit' name='submit' value='YES' />
-
+		<input type='submit' name='submit' value='YES' id='submit'/>
+		<br><br>
 		<a href="student_course_list.php">No, Go Back to List</a>
 	</body>
 </htm>
