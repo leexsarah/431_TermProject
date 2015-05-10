@@ -1,3 +1,9 @@
+<?php
+	session_start();
+	$fcwid = $_SESSION["cwid"];
+	$status = $_SESSION["status"];
+?>
+
 <!doctype html>
 <html>
 	<head>
@@ -13,12 +19,13 @@
 		 		<th>Section Number</th>
 		 		<th>Course ID</th>
 		 		<th>Details</th>
+		 		<th>Roster</th>
 		 	</tr>
 			<?php
 				include "../create_database_link.php";
 				
 				//Query the database
-				$query = "select section_number, fk_course_id, fname, lname, cwid from csuf_member, faculty, section where instructor=cwid and cwid=fcwid and cwid=888888888;";
+				$query = "select section_number, fk_course_id, fname, lname, cwid from csuf_member, faculty, section where instructor = cwid and cwid = fcwid and cwid = $fcwid;";
 				
 				$result = $link->query($query) or die("ERROR:" . mysqli_error($link));
 
@@ -34,7 +41,14 @@
 					echo "<form action='view_details.php' method='POST'>";
 					echo "<input type='hidden' name='fk_course_id' value='" . $fk_course_id . "' />";
 					echo "<input type='hidden' name='section_number' value='" . $section_number . "' />";
-					echo "<input type='submit' id='submit' value='View For Details' />";
+					echo "<input type='submit' id='submit' value='View Details' />";
+					echo "</form>";
+					echo "</td>";
+					echo "<td>";
+					echo "<form action='enter_score.php' method='POST'>";
+					echo "<input type='hidden' name='fk_course_id' value='" . $fk_course_id . "' />";
+					echo "<input type='hidden' name='section_number' value='" . $section_number . "' />";
+					echo "<input type='submit' id='submit' value='View Roster' />";
 					echo "</form>";
 					echo "</td>";
 				}
