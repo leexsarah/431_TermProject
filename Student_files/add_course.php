@@ -1,8 +1,8 @@
 <?php
 	session_start();
 
-	$section_number = $_POST["sectionNumber"];
-	$course_name = $_POST["course_name"];
+	$sectionNumber = $_POST["section_number"];
+	$courseID = $_POST["course_id"];
 	$student_information = $_SESSION["student_information"];
 ?>
 
@@ -16,8 +16,10 @@
 		<?php include "../logout.php"; ?>
 		<h1>Are you sure you want to add this class?</h1>
 		<form action='confirm_add.php' method='POST'>
-		<input type='hidden' name='section_number' value='$sectionNumber' />
-		<input type='hidden' name='course_name' value='$course_name' />
+		<?php
+			echo "<input type='hidden' name='sectionNumber' value='$sectionNumber' />";
+			echo "<input type='hidden' name='courseID' value='$courseID' />";
+		?>
 		<input type='submit' name='submit' value='YES' />
 
 		<a href="student_course_list.php">No, Go Back to List</a>
