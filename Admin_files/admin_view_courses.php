@@ -14,6 +14,7 @@
 </head>
 <body>
 		<?php include "../logout.php"; ?>
+		<br>
 		<div id="class-schedule">
 		<table valign='top' cellpadding='5'>
 		 	<caption>Course List (Spring 2015)</caption>
@@ -111,13 +112,15 @@
 			<input type="submit" id="submit" value="Create Course" />
 		</form>
 		<div id="errorOutput">
-		<?php
-			if(isset($_SESSION["addError"])){
-				echo "<p>" . $_SESSION["addError"] . "</p>";
-			}
-
-			unset($_SESSION["addError"]);
-		?>
+			<div class="error">
+				<?php
+					if(isset($_SESSION["addError"])){
+						echo "<p>" . $_SESSION["addError"] . "</p>";
+					}
+	
+					unset($_SESSION["addError"]);
+				?>
+			</div>
 		</div>
 	</div>
 </body>

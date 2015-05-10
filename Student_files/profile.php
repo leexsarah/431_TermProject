@@ -6,6 +6,7 @@
 	</head>
 	<body>
 		<?php include "../logout.php"; ?>
+		<br><br>
 		<?php
 			session_start();
 			$student = $_SESSION["student_information"];
@@ -31,7 +32,7 @@
 			echo "</tr>";
 			echo "<tr>";
 			echo "<td>Address</td>";
-			echo "<td>" . $city . " " . $state . " " . $zip . "</td>";
+			echo "<td>" . $city . ", " . $state . " " . $zip . "</td>";
 			echo "</tr>";
 			echo "<tr>";
 			echo "<td>Major</td>";

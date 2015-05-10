@@ -98,7 +98,7 @@
 			<label for="inputEndTime">End Time</label>
 			<input type="text" name="inputEndTime" id="inputEndTime" value="13:45:00" />
 
-			<label for="inputRoom">Room</label>
+			<br><label for="inputRoom">Room</label>
 			<input type="text" name="inputRoom" id="inputRoom" />
 
 			<label for="inputAvailableSeats">Available Seats</label>
@@ -119,7 +119,7 @@
 		?>
 	</div>
 
-	<a href="admin_view_courses.php">Click here to go back to the course list.</a>
+	<br><a href="admin_view_courses.php">Click here to go back to the course list.</a>
 </body>
 </html>
 
