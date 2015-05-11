@@ -15,6 +15,7 @@
 <html>
 <head>
 	<title>Admin View: Section Deleted</title>
+	<link href="../style.css" rel="stylesheet" media="all" />
 </head>
 <body>
 	<?php include "../logout.php"; ?>
