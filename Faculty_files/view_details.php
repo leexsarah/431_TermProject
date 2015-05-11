@@ -60,6 +60,7 @@
 		echo "</table>";
 	?>
 	<br><br>
-	<a href="faculty.php">Click here to go back to main page.</a>
+	<a href="faculty.php">Click here to go back to main page.</a><br />
+	<a href="faculty_course_list.php">Click here to go back to your course list.</a>
 </body>
 </html>

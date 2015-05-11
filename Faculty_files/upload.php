@@ -12,5 +12,7 @@
 			<input type="file" name="upload" id="upload"><br><br>
 			<input type="submit" value="Upload" name="submit" id="submit">
 		</form>
+		<br />
+		<a href="faculty.php">Click here to go back to the main page.</a>
 	</body>
 </html>

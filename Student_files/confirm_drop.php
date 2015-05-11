@@ -38,6 +38,7 @@
 			if($result){
 				echo "<h1>Drop Confirmed</h1>";
 				echo "<p>You have dropped the course.</p>";
+				echo "<p>Do NOT refresh the page. Refreshing the page will result in errors due to duplicate queries.</p>";
 				echo "<a href='student_view_class_list.php'>Click here to go back to your class list.</a><br><br>";
 				echo "<a href='student.php'>Click here to go back to the main page.</a>";
 			} else{
