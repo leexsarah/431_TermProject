@@ -6,6 +6,7 @@
 		<link href="../style.css" rel="stylesheet" media="all">
 	</head>
 	<body>
+		<?php include "../logout.php"; ?>
 		<form action="upload_done.php" method="post" enctype="multipart/form-data">
 			<p class="u">Choose the course material to upload: </p>
 			<input type="file" name="upload" id="upload"><br><br>

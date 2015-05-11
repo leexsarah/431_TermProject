@@ -21,6 +21,7 @@
 <!doctype html>
 <html>
 	<head>
+		<?php include "../logout.php"; ?>
 		<title>Faculty Page</title>
 		<link href="../style.css" rel="stylesheet" media="all">
 	</head>
