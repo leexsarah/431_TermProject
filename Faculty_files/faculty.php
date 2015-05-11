@@ -25,6 +25,7 @@
 		<link href="../style.css" rel="stylesheet" media="all">
 	</head>
 	<body>
+		<?php include "../logout.php"; ?>
 		<h1>Welcome <?php echo $fname ?></h1>
 		<?php include "header.php"; ?>
 	</body>
