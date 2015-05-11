@@ -38,9 +38,10 @@
 			if($result){
 				echo "<h1>Congratulations</h1>";
 				echo "<p>You have been added to the course.</p>";
+				echo "<p>Do NOT refresh the page. Refreshing the page will result in errors due to duplicate queries.</p>";
 				echo "<a href='student_course_list.php'>Click here to go back to the course list.</a>";
-				echo "<p> or here:";
-				echo "<a href='student.php'>To go back to the main page</a>";
+				echo "<br />";
+				echo "<a href='student.php'>Click here to go back to the main page</a>";
 			} else{
 				echo "<h1>Error</h1>";
 				echo "<p>We goofed up somehow.</p>";

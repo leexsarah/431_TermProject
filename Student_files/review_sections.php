@@ -93,6 +93,6 @@
 		}
 		echo "</table>";
 	?>
-	<a href="student.php">Click here to go back to main page.</a>
+	<a href="student_course_list.php">Click here to go back to the course list</a>
 </body>
 </html>

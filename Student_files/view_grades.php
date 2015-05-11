@@ -71,7 +71,7 @@
 		*/
 	?>
 	<br><br>
-	<a href="student.php">Go back</a>
+	<a href="student_view_class_list.php">Click here to go back to your course list</a>
 	</center>
 	</body>
 </html>
